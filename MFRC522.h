@@ -54,7 +54,7 @@
 #define     Reserved00            0x00
 #define     CommandReg            0x01
 #define     CommIEnReg            0x02
-#define     DivlEnReg             0x03
+#define     DivIEnReg             0x03
 #define     CommIrqReg            0x04
 #define     DivIrqReg             0x05
 #define     ErrorReg              0x06
@@ -93,7 +93,7 @@
 #define     Reserved22            0x25
 #define     RFCfgReg              0x26
 #define     GsNReg                0x27
-#define     CWGsPReg	          0x28
+#define     CWGsPReg              0x28
 #define     ModGsPReg             0x29
 #define     TModeReg              0x2A
 #define     TPrescalerReg         0x2B
@@ -117,7 +117,7 @@
 #define     Reserved31            0x3C
 #define     Reserved32            0x3D
 #define     Reserved33            0x3E
-#define     Reserved34	      	  0x3F
+#define     Reserved34            0x3F
 //-----------------------------------------------
 
 class MFRC522 {
@@ -139,7 +139,7 @@ class MFRC522 {
   int authenticate(byte mode, byte block, byte *key, byte *serial);
   int readFromTag(byte blockAddr, byte *recvData);
   int writeToTag(byte blockAddr, byte *writeData);
-  void haltTag();
+  int haltTag();
 
  private:
   int _sad, _reset;
